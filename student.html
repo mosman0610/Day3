@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <style>
+            body
+			{
+				background-color: grey;
+                margin-left: 20%;
+                margin-right: 20%;
+                border: 2px solid silver;
+                padding: 10px 10px 10px 10px;
+                font-family: 'Times New Roman', Times, serif;
+                text-align: center
+            }
+            table, th, td 
+            {
+                border: 1px solid black;
+            }
+
+        </style>
+        <title>Student Homework</title>
+    </head>
+        <body>
+            <br>
+            <br>
+               <h1>New Client Form</h1><br>
+                    
+                <form action="/action_page.php">
+                    First Name: <input type="text" id="firstname" size="15">
+                    Last Name: <input type="text" id="lastname" size="15">
+                    Age:<input type="text" id="age" size="2"><br>
+                    Male:<input id="male" type="checkbox">
+                    Female:<input id="femal" type="checkbox">
+                    <input type="button" value="Submit" onclick="addRow();"/>
+                </form>
+
+                <table id="table1" align="center">
+                        <tr>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Image</th>
+                        </tr>
+                      </table>
+
+                <script type="text/javascript">
+                                          
+                    function addRow()
+					{
+						var table = document.getElementById("table1");
+						var newRow = table.insertRow();
+						var cell1 = newRow.insertCell(0);
+						var cell2 = newRow.insertCell(1);
+						var cell3 = newRow.insertCell(2);
+                        var cell4 = newRow.insertCell(3);
+
+                        cell1.innerHTML = document.getElementById("firstname").value;
+                        cell2.innerHTML = document.getElementById("lastname").value;
+                        cell3.innerHTML = document.getElementById("age").value;
+
+                        var checkboxmale = document.getElementById("male");
+                        var checkboxfemale = document.getElementById("female");
+
+                        if(checkboxmale.checked ==true)
+                        {
+                        var img = document.createElement('img'); 
+                        img.src ="male.jpg"; 
+                        img.height="40";
+                        img.width="40";
+                        cell4.appendChild(img); 
+                        }
+                        else
+                        {
+                        var img = document.createElement('img'); 
+                        img.src ="female.jpg"; 
+                        img.height="40";
+                        img.width="40";
+                        cell4.appendChild(img); 
+                        }
+					}	
+                    </script>
+                
+        </body>
+</html>

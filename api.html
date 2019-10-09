@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+</head>
+<body>
+
+        <table id="table1" align="center">
+                <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Image</th>
+                </tr>
+              </table>
+
+    <button>call api</button>
+<script>
+$(document).ready(function(){
+    $("button").click(function(){
+    $.ajax({url: "http://www.omdbapi.com/?t=titanic&apikey=46495c08", success: function(result){
+        alert(result.Country);
+        alert(result.Director);
+        console.log(result)
+    }});
+    });
+});
+    </script>
+ </body>
+</html>
